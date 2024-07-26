@@ -1,0 +1,13 @@
+streamlit==1.10.0
+langchain==0.2.10
+
+langchain-community
+langchain-text-splitters==0.2.2
+PyPDF2==2.10.0
+python-dotenv==0.19.2
+altair==4.1.0
+pydantic==1.10.7
+langchain-core
+langchain-openai
+neo4j
+

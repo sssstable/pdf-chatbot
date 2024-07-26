@@ -1,5 +1,5 @@
 import logging
-from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_community.chat_models import ChatOllama
 
@@ -8,7 +8,7 @@ from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 
 import logging
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain.embeddings.ollama import OllamaEmbeddings  # Correct import path for OllamaEmbeddings
 
 # Initialize logger
 logger = logging.getLogger(__name__)

@@ -4,7 +4,7 @@ from langchain.chains import RetrievalQA
 from PyPDF2 import PdfReader
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Neo4jVector
+from langchain.vectorstores import Neo4jVector  # Ensure this import path is correct
 from streamlit.logger import get_logger
 from chains import (
     load_embedding_model,
@@ -23,8 +23,8 @@ ollama_base_url = os.getenv("OLLAMA_BASE_URL")
 embedding_model_name = os.getenv("EMBEDDING_MODEL")
 llm_name = os.getenv("LLM")
 
-# Remapping for Langchain Neo4j integration
-os.environ["NEO4J_URL"] = url
+""" # Remapping for Langchain Neo4j integration
+os.environ["NEO4J_URL"] = url """
 
 logger = get_logger(__name__)
 

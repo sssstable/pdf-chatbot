@@ -4,7 +4,7 @@ from langchain.chains import RetrievalQA
 from PyPDF2 import PdfReader
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Neo4jVector
+from langchain.vectorstores import Neo4jVector  # Ensure this import path is correct
 from streamlit.logger import get_logger
 from chains import (
     load_embedding_model,

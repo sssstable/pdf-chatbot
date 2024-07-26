@@ -1,5 +1,5 @@
 import logging
-from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_community.chat_models import ChatOllama
 

@@ -1,14 +1,44 @@
 import logging
 from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_community.chat_models import ChatOllama
-
+from langchain_community.graphs import Neo4jGraph
+from langchain_community.vectorstores import Neo4jVector
 
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 
-import logging
+from langchain.prompts import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    SystemMessagePromptTemplate)
+
+""" 
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.embeddings import OllamaEmbeddings
+from langchain_community.embeddings import BedrockEmbeddings
+from langchain_community.embeddings.sentence_transformer import SentenceTransformerEmbeddings
+
+from langchain_openai import ChatOpenAI
+from langchain_community.chat_models import ChatOllama
+from langchain_community.chat_models import BedrockChat
+
+from langchain_community.graphs import Neo4jGraph
+from langchain_community.vectorstores import Neo4jVector
+
+from langchain.chains import RetrievalQAWithSourcesChain
+from langchain.chains.qa_with_sources import load_qa_with_sources_chain
+
+from langchain.prompts import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    SystemMessagePromptTemplate
+) """
+
+import logging
+from langchain.embeddings.openai import OpenAIEmbeddings  # Correct import path for OpenAIEmbeddings
+from langchain.embeddings.ollama import OllamaEmbeddings  # Correct import path for OllamaEmbeddings
 
 # Initialize logger
 logger = logging.getLogger(__name__)
