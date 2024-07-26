@@ -6,8 +6,8 @@ This is a Streamlit app that allows you to chat with the content of a PDF file. 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/streamlit-pdf-chatbot.git
-   cd streamlit-pdf-chatbot
+   git clone https://github.com/sssstable/pdf-chatbot
+   cd yourpath/pdf-chatbot
    ```
 
 2. Create a virtual environment and install dependencies:
