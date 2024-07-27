@@ -18,6 +18,7 @@ password = st.secrets["database"]["NEO4J_PASSWORD"]
 ollama_base_url = st.secrets["api"]["OLLAMA_BASE_URL"]
 embedding_model_name = st.secrets["api"]["EMBEDDING_MODEL"]
 llm_name = st.secrets["api"]["LLM"]
+openai_api_key=st.secrets["database"]["OPENAI_API_KEY"]
 
 # Check if the URL is None and handle the case
 if url is None:
