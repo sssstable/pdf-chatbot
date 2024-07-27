@@ -18,26 +18,27 @@ logging.basicConfig(level=logging.INFO)
 
 def load_embedding_model(embedding_model_name: str, logger=logger, config={}):
     
-    if embedding_model_name == "ollama":
+    # if embedding_model_name == "openai":
+        embeddings = OpenAIEmbeddings(api_key=openai_api_key)
+        dimension = 1536
+        logger.info("Embedding: Using OpenAI")
+        return embeddings, dimension
+"""     elif embedding_model_name == "ollama":
         embeddings = OllamaEmbeddings(
             base_url=config["ollama_base_url"], model="llama2"
         )
         dimension = 4096
         logger.info("Embedding: Using Ollama")
-    elif embedding_model_name == "openai":
-        embeddings = OpenAIEmbeddings(api_key=openai_api_key)
-        dimension = 1536
-        logger.info("Embedding: Using OpenAI")
     else:
-        raise ValueError(f"Unknown embedding model name: {embedding_model_name}")
-    return embeddings, dimension
+        raise ValueError(f"Unknown embedding model name: {embedding_model_name}") """
+
 
 def load_llm(llm_name: str, logger=logger, config={}):
     api_key = openai_api_key
-    if llm_name == "gpt-4":
-        logger.info("LLM: Using GPT-4")
-        return ChatOpenAI(temperature=0, model_name="gpt-4", streaming=True, openai_api_key=api_key)
-    elif llm_name == "gpt-3.5":
+    # if llm_name == "gpt-4":
+    logger.info("LLM: Using GPT-4")
+    return ChatOpenAI(temperature=0, model_name="gpt-4", streaming=True, openai_api_key=api_key)
+"""     elif llm_name == "gpt-3.5":
         logger.info("LLM: Using GPT-3.5")
         return ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", streaming=True)
     elif len(llm_name):
@@ -52,4 +53,4 @@ def load_llm(llm_name: str, logger=logger, config={}):
             num_ctx=3072,
         )
     logger.info("LLM: Using GPT-3.5")
-    return ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", streaming=True)
+    return ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", streaming=True) """
