@@ -17,6 +17,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 def load_embedding_model(embedding_model_name: str, logger=logger, config={}):
+    
     if embedding_model_name == "ollama":
         embeddings = OllamaEmbeddings(
             base_url=config["ollama_base_url"], model="llama2"
@@ -32,9 +33,10 @@ def load_embedding_model(embedding_model_name: str, logger=logger, config={}):
     return embeddings, dimension
 
 def load_llm(llm_name: str, logger=logger, config={}):
+    api_key = openai_api_key
     if llm_name == "gpt-4":
         logger.info("LLM: Using GPT-4")
-        return ChatOpenAI(temperature=0, model_name="gpt-4", streaming=True)
+        return ChatOpenAI(temperature=0, model_name="gpt-4", streaming=True, openai_api_key=api_key)
     elif llm_name == "gpt-3.5":
         logger.info("LLM: Using GPT-3.5")
         return ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", streaming=True)
