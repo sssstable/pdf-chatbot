@@ -30,9 +30,6 @@ os.environ["NEO4J_URL"] = url
 if url is None:
     raise ValueError("NEO4J_URL environment variable is not set.")
 
-# Remapping for Langchain Neo4j integration
-os.environ["NEO4J_URL"] = url
-
 logger = get_logger(__name__)
 
 embeddings, dimension = load_embedding_model(

@@ -9,6 +9,8 @@ from langchain.chains.qa_with_sources import load_qa_with_sources_chain
 
 import logging
 from langchain_community.embeddings import OllamaEmbeddings
+import streamlit as st 
+openai_api_key=st.secrets["database"]["OPENAI_API_KEY"]
 
 # Initialize logger
 logger = logging.getLogger(__name__)
@@ -22,7 +24,7 @@ def load_embedding_model(embedding_model_name: str, logger=logger, config={}):
         dimension = 4096
         logger.info("Embedding: Using Ollama")
     elif embedding_model_name == "openai":
-        embeddings = OpenAIEmbeddings()
+        embeddings = OpenAIEmbeddings(api_key=openai_api_key)
         dimension = 1536
         logger.info("Embedding: Using OpenAI")
     else:
