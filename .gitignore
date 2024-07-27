@@ -47,3 +47,4 @@ secrets.toml
 
 # Others
 *.DS_Store
+.history
