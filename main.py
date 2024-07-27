@@ -18,11 +18,14 @@ password = st.secrets["database"]["NEO4J_PASSWORD"]
 ollama_base_url = st.secrets["api"]["OLLAMA_BASE_URL"]
 embedding_model_name = st.secrets["api"]["EMBEDDING_MODEL"]
 llm_name = st.secrets["api"]["LLM"]
-openai_api_key=st.secrets["database"]["OPENAI_API_KEY"]
+openai_api_key=st.secrets["api"]["OPENAI_API_KEY"]
 
-# Check if the URL is None and handle the case
-if url is None:
+# test wether secrets can be interpreted correctly in first instance
+if url is not None:
+    print("NEO4J_URL environment variable is set.")
+else:
     raise ValueError("NEO4J_URL environment variable is not set.")
+
 
 # Remapping for Langchain Neo4j integration
 os.environ["NEO4J_URL"] = url
